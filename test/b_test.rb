@@ -1,4 +1,4 @@
-require "minitest/autorun"
+require "./test/test_helper.rb"
 
 class AaTest < Minitest::Test
 
