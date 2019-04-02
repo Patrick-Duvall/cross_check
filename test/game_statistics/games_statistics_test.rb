@@ -1,11 +1,12 @@
 require "./test/test_helper"
 
-class GameStatistics < Minitest::Test
+
+class GameStatisticsTest < Minitest::Test
 
   def setup
-    game_path = './data/game_sample.csv'
-      team_path = './data/team_info_sample.csv'
-      game_teams_path = './data/game_teams_stats_sample.csv'
+    game_path = './data/sample/game_sample.csv'
+      team_path = './data/sample/team_info_sample.csv'
+      game_teams_path = './data/sample/game_teams_stats_sample.csv'
 
       locations = {
         games: game_path,
