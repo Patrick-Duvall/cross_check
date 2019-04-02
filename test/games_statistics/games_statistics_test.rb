@@ -1,6 +1,7 @@
 require "./test/test_helper"
 
-class GameStatistics < Minitest::Test
+
+class GameStatisticsTest < Minitest::Test
 
   def setup
     game_path = './data/game_sample.csv'

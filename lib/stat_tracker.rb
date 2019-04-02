@@ -1,7 +1,8 @@
 require "csv"
+require "./lib/game_stats"
 class StatTracker
-
-attr_reader :game_stats
+  include GameStatistics
+  attr_reader :game_stats
 
   def initialize
     @game_stats = {}
