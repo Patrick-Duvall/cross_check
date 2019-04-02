@@ -35,11 +35,15 @@ module GameStatistics
   end
 
   def count_of_games_by_season
-    games.reduce({}) do |retval,game1|
-      length =games.count{|game| game[:season] == game1[:season]}
-      retval[game1[:season].to_s] = length
-        retval
-    end
+    hash = {}
+   @game_stats.each do |id, game|
+     unless hash.keys.include?(game[:season].to_s)
+       hash[game[:season].to_s] = 1
+     else
+       hash[game[:season].to_s] += 1
+     end
+   end
+   hash
   end
 
   def average_goals_per_game
