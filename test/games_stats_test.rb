@@ -4,18 +4,18 @@ require "./test/test_helper"
 class GameStatisticsTest < Minitest::Test
 
   def setup
-    game_path = './data/sample/game_sample.csv'
-      team_path = './data/sample/team_info_sample.csv'
-      game_teams_path = './data/sample/game_teams_stats_sample.csv'
+    game_path       = './data/sample/game_sample.csv'
+    team_path       = './data/sample/team_info_sample.csv'
+    game_teams_path = './data/sample/game_teams_stats_sample.csv'
 
-      locations = {
-        games: game_path,
-        teams: team_path,
-        game_teams: game_teams_path
-      }
+    locations = {
+      games:      game_path,
+      teams:      team_path,
+      game_teams: game_teams_path
+    }
 
-      @stat_tracker = StatTracker.new
-      @stat_tracker.from_csv(locations)
+    @stat_tracker = StatTracker.new
+    @stat_tracker.from_csv(locations)
   end
 
   def test_returns_highest_total_score
@@ -42,7 +42,7 @@ class GameStatisticsTest < Minitest::Test
     expected = {
       '20122013' => 4,
       '20152016' => 4
-                }
+    }
     assert_equal expected, @stat_tracker.count_of_games_by_season
   end
 
@@ -54,7 +54,7 @@ class GameStatisticsTest < Minitest::Test
     expected = {
       '20122013' => 5.5,
       '20152016' => 3.25
-                }
+    }
     assert_equal expected, @stat_tracker.average_goals_by_season
   end
 
